@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Video Tutorials</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .video-container {
+            margin: 20px 0;
+        }
+        .feedback-section {
+            margin-top: 40px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .sign-up {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="text-center my-4">Math Video Tutorials</h1>
+
+        <!-- Video Tutorials -->
+        <div class="row">
+            <div class="col-md-4 video-container">
+                <div class="card">
+                    <h5 class="card-header">Algebra Basics</h5>
+                    <div class="video-container">
+                        <iframe width="100%" height="215" src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <p class="card-text">Learn the fundamentals of algebra, including equations and functions.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 video-container">
+                <div class="card">
+                    <h5 class="card-header">Calculus 101</h5>
+                    <div class="video-container">
+                        <iframe width="100%" height="215" src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <p class="card-text">An introduction to the concepts of limits, derivatives, and integrals.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 video-container">
+                <div class="card">
+                    <h5 class="card-header">Geometry Basics</h5>
+                    <div class="video-container">
+                        <iframe width="100%" height="215" src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <p class="card-text">Understanding shapes, sizes, and the properties of space.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feedback Section -->
+        <div class="feedback-section">
+            <h3>Feedback</h3>
+     
+</body>
+</html>
+        <form id="contactForm" onsubmit="return validateForm()">
+          <div class="form-group">
+            <label for="name">Your Name:</label>
+            <input type="text" class="form-control" id="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Your Email:</label>
+            <input type="email" class="form-control" id="email" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Feedback:</label>
+            <textarea class="form-control" id="message" rows="5" required></textarea>
+            <div class="error" id="messageError"></div>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Email</button>
+        </form>
+        </div>
+
+        <script>
+          function validateForm() {
+            const message = document.getElementById('message').value;
+            const messageError = document.getElementById('messageError');
+            const threateningWords = ["threat", "kill", "hurt", "attack", "bomb","nyonga","fool","thief"]; // Add more as needed
+
+            // Check for threatening words
+            for (let word of threateningWords) {
+              if (message.toLowerCase().includes(word)) {
+                messageError.innerText = "Your message contains inappropriate content. Please revise your message.";
+                return false; // Prevent form submission
+              }
+            }
+
+            messageError.innerText = ""; // Clear previous error messages
+            sendEmail(); // Call function to send email
+            return false; // Prevent form submission to stay on the page
+          }
+
+          function sendEmail() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            const subject = "Contact from " + name;
+            const body = `Name: ${name}\nEmail: ${email}\nMessage: ${message}`;
+
+            // Use mailto to open email client with pre-filled information
+            window.location.href = `mailto:chris.koome@mpesafoundationacademy.ac.ke?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+          }
+        </script>
+
+        </body>
+
+        </html>
