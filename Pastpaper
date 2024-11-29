@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Revision Portal</title>
+<div class="results" id="resultsContainer"></div>
+
+<script>
+    async function searchMathTopic() {
+        const query = document.getElementById('searchInput').value;
+
+        // Send a request to the backend API
+        const response = await fetch(`http://localhost:3000/search?q=${encodeURIComponent(query)}`);
+        const topics = await response.json();
+
+        // Display the search results
+        const resultsContainer = document.getElementById('resultsContainer');
+        resultsContainer.innerHTML = '';
+
+        if (topics.length > 0) {
+            topics.forEach(topic => {
+                const topicElement = document.createElement('div');
+                topicElement.classList.add('topic');
+                topicElement.innerHTML = `
+                    <h3>${topic.topic_name}</h3>
+                    <a href="${topic.past_paper_url}" target="_blank">Past Paper</a> |
+                    <a href="${topic.marking_scheme_url}" target="_blank">Marking Scheme</a>
+                `;
+                resultsContainer.appendChild(topicElement);
+            });
+        } else {
+            resultsContainer.innerHTML = '<p>Nothing found on the search.</p>';
+        }
+    }
+</script>
+
+</body>
+</html>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: navajowhite;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+        .logo {
+            width: 100px;
+        }
+        .container {
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            background-color: #e8e8e8;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+        ul li a {
+            text-decoration: none;
+            color: #4CAF50;
+        }
+        ul li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header" color="peru">
+    <h1>Math Revision Papers</h1>
+    <p>Helping you ace your exams with targeted practice</p><button color="peru"><a href="/template.html">BACK</a></button>
+</div>
+
+
+<div class="container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Topics Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: skyblue;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .search-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            width: 400px;
+            padding: 10px;
+            margin-right: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px;
+            border: none;
+            background-color: red;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: peru;
+        }
+        .results {
+            text-align: center;
+            margin-top: 20px;
+            max-width: 600px;
+        }
+        .topic {
+            margin-bottom: 15px;
+            background-color: peru;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+<div class="search-container">
+    <h1>Search Math Topics</h1>
+    <input type="text" id="searchInput" placeholder="Enter math topic..." />
+    <button onclick="searchMathTopic()">Search</button>
+</div>
+
+<div class="results" id="resultsContainer"></div>
+
+<script>
+    // Expanded simulated data for math topics with links to TPR website
+    const mathTopics = [
+        { topic_name: 'Algebra', past_paper_url: 'https://www.testprepreview.com/algebra_past_paper', marking_scheme_url: 'https://www.testprepreview.com/algebra_marking_scheme' },
+        { topic_name: 'Geometry', past_paper_url: 'https://www.testprepreview.com/geometry_past_paper', marking_scheme_url: 'https://www.testprepreview.com/geometry_marking_scheme' },
+        { topic_name: 'Calculus', past_paper_url: 'https://www.testprepreview.com/calculus_past_paper', marking_scheme_url: 'https://www.testprepreview.com/calculus_marking_scheme' },
+        { topic_name: 'Statistics', past_paper_url: 'https://www.testprepreview.com/statistics_past_paper', marking_scheme_url: 'https://www.testprepreview.com/statistics_marking_scheme' },
+        { topic_name: 'Trigonometry', past_paper_url: 'https://www.testprepreview.com/trigonometry_past_paper', marking_scheme_url: 'https://www.testprepreview.com/trigonometry_marking_scheme' },
+        { topic_name: 'Probability', past_paper_url: 'https://www.testprepreview.com/probability_past_paper', marking_scheme_url: 'https://www.testprepreview.com/probability_marking_scheme' },
+        { topic_name: 'Gradient and Equation of a Line', past_paper_url: 'https://www.testprepreview.com/gradient_line_past_paper', marking_scheme_url: 'https://www.testprepreview.com/gradient_line_marking_scheme' },
+        { topic_name: 'Functions', past_paper_url: 'https://www.testprepreview.com/functions_past_paper', marking_scheme_url: 'https://www.testprepreview.com/functions_marking_scheme' },
+        { topic_name: 'Sets', past_paper_url: 'https://www.testprepreview.com/sets_past_paper', marking_scheme_url: 'https://www.testprepreview.com/sets_marking_scheme' },
+        { topic_name: 'Fractions', past_paper_url: 'https://www.testprepreview.com/fractions_past_paper', marking_scheme_url: 'https://www.testprepreview.com/fractions_marking_scheme' },
+        { topic_name: 'Ratios', past_paper_url: 'https://www.testprepreview.com/ratios_past_paper', marking_scheme_url: 'https://www.testprepreview.com/ratios_marking_scheme' },
+        { topic_name: 'Percentages', past_paper_url: 'https://www.testprepreview.com/percentages_past_paper', marking_scheme_url: 'https://www.testprepreview.com/percentages_marking_scheme' },
+        { topic_name: 'Square Roots', past_paper_url: 'https://www.testprepreview.com/square_roots_past_paper', marking_scheme_url: 'https://www.testprepreview.com/square_roots_marking_scheme' },
+        { topic_name: 'Exponents', past_paper_url: 'https://www.testprepreview.com/exponents_past_paper', marking_scheme_url: 'https://www.testprepreview.com/exponents_marking_scheme' },
+        { topic_name: 'Linear Equations', past_paper_url: 'https://www.testprepreview.com/linear_equations_past_paper', marking_scheme_url: 'https://www.testprepreview.com/linear_equations_marking_scheme' },
+        { topic_name: 'Inequalities', past_paper_url: 'https://www.testprepreview.com/inequalities_past_paper', marking_scheme_url: 'https://www.testprepreview.com/inequalities_marking_scheme' },
+        { topic_name: 'Polynomials', past_paper_url: 'https://www.testprepreview.com/polynomials_past_paper', marking_scheme_url: 'https://www.testprepreview.com/polynomials_marking_scheme' },
+        { topic_name: 'Coordinate Geometry', past_paper_url: 'https://www.testprepreview.com/coordinate_geometry_past_paper', marking_scheme_url: 'https://www.testprepreview.com/coordinate_geometry_marking_scheme' },
+        // Additional hypothetical topics to reach 1000+
+        { topic_name: 'Arithmetic', past_paper_url: 'https://www.testprepreview.com/arithmetic_past_paper', marking_scheme_url: 'https://www.testprepreview.com/arithmetic_marking_scheme' },
+        { topic_name: 'Statistics and Probability', past_paper_url: 'https://www.testprepreview.com/statistics_probability_past_paper', marking_scheme_url: 'https://www.testprepreview.com/statistics_probability_marking_scheme' },
+        { topic_name: 'Measurement', past_paper_url: 'https://www.testprepreview.com/measurement_past_paper', marking_scheme_url: 'https://www.testprepreview.com/measurement_marking_scheme' },
+        { topic_name: 'Number Patterns', past_paper_url: 'https://www.testprepreview.com/number_patterns_past_paper', marking_scheme_url: 'https://www.testprepreview.com/number_patterns_marking_scheme' },
+        { topic_name: 'Angles', past_paper_url: 'https://www.testprepreview.com/angles_past_paper', marking_scheme_url: 'https://www.testprepreview.com/angles_marking_scheme' },
+        { topic_name: 'Data Handling', past_paper_url: 'https://www.testprepreview.com/data_handling_past_paper', marking_scheme_url: 'https://www.testprepreview.com/data_handling_marking_scheme' },
+        { topic_name: 'Prime Numbers', past_paper_url: 'https://www.testprepreview.com/prime_numbers_past_paper', marking_scheme_url: 'https://www.testprepreview.com/prime_numbers_marking_scheme' },
+        { topic_name: 'Surface Area and Volume', past_paper_url: 'https://www.testprepreview.com/surface_area_volume_past_paper', marking_scheme_url: 'https://www.testprepreview.com/surface_area_volume_marking_scheme' },
+        { topic_name: 'Simple Interest', past_paper_url: 'https://www.testprepreview.com/simple_interest_past_paper', marking_scheme_url: 'https://www.testprepreview.com/simple_interest_marking_scheme' },
+        { topic_name: 'Compound Interest', past_paper_url: 'https://www.testprepreview.com/compound_interest_past_paper', marking_scheme_url: 'https://www.testprepreview.com/compound_interest_marking_scheme' },
+        { topic_name: 'Transformations', past_paper_url: 'https://www.testprepreview.com/transformations_past_paper', marking_scheme_url: 'https://www.testprepreview.com/transformations_marking_scheme' },
+        { topic_name: 'Graphs', past_paper_url: 'https://www.testprepreview.com/graphs_past_paper', marking_scheme_url: 'https://www.testprepreview.com/graphs_marking_scheme' },
+        // ... Add more topics as needed
+    ];
+
+    function searchMathTopic() {
+        const query = document.getElementById('searchInput').value.toLowerCase();
+
+        // Filter the simulated data based on the user query
+        const filteredTopics = mathTopics.filter(topic => topic.topic_name.toLowerCase().includes(query));
+
+        // Display the search results
+        const resultsContainer = document.getElementById('resultsContainer');
+        resultsContainer.innerHTML = '';
+
+        if (filteredTopics.length > 0) {
+            filteredTopics.forEach(topic => {
+                const topicElement = document.createElement('div');
+                topicElement.classList.add('topic');
+                topicElement.innerHTML = `
+                    <h3>${topic.topic_name}</h3>
+                    <a href="${topic.past_paper_url}" target="_blank">Past Paper</a> |
+                    <a href="${topic.marking_scheme_url}" target="_blank">Marking Scheme</a>
+                `;
+                resultsContainer.appendChild(topicElement);
+            });
+        } else {
+            resultsContainer.innerHTML = '<p>No topics found.</p>';
+        }
+    }
+</script>
+
+</body>
+</html>
+<li>THE TOPIC YOU SEARCH FOR WILL APPEAR ON TOP</li>
+    <h2>Quadratic Equations</h2>
+    <ul>
+        <li>
+            <span>Solving Quadratic Equations by Factoring</span>
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Past Paper</a> |
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Marking Scheme</a>
+        </li>
+        <li>
+            <span>Using the Quadratic Formula</span>
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Past Paper</a> |
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Marking Scheme</a>
+        </li>
+    </ul>
+
+    <h2>Simultaneous Equations</h2>
+    <ul>
+        <li>
+            <span>Solving Linear and Quadratic Equations</span>
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Past Paper</a> |
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Marking Scheme</a>
+        </li>
+    </ul>
+
+    <h2>Probability</h2>
+    <ul>
+        <li>
+            <span>Conditional Probability</span>
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Past Paper</a> |
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Marking Scheme</a>
+        </li>
+        <li>
+            <span>Probability of Combined Events</span>
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Past Paper</a> |
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Marking Scheme</a>
+        </li>
+    </ul>
+
+    <h2>Circle Geometry</h2>
+    <ul>
+        <li>
+            <span>Tangents and Chords</span>
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Past Paper</a> |
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Marking Scheme</a>
+        </li>
+    </ul>
+
+    <h2>Exponential Functions</h2>
+    <ul>
+        <li>
+            <span>Solving Exponential Equations</span>
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Past Paper</a> |
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Marking Scheme</a>
+        </li>
+        <li>
+            <span>Growth and Decay Models</span>
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Past Paper</a> |
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Marking Scheme</a>
+        </li>
+    </ul>
+
+    <h2>Basic Arithmetic (Primary)</h2>
+    <ul>
+        <li>
+            <span>Addition and Subtraction</span>
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Past Paper</a> |
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Marking Scheme</a>
+        </li>
+        <li>
+            <span>Multiplication and Division</span>
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Past Paper</a> |
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Marking Scheme</a>
+        </li>
+    </ul>
+
+    <h2>Fractions (Primary)</h2>
+    <ul>
+        <li>
+            <span>Understanding Fractions</span>
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Past Paper</a> |
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Marking Scheme</a>
+        </li>
+        <li>
+            <span>Adding and Subtracting Fractions</span>
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Past Paper</a> |
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Marking Scheme</a>
+        </li>
+    </ul>
+<div class="container">
+
+    <!-- Logarithms Section -->
+    <h2>Logarithms</h2>
+    <ul>
+        <li>
+            <span>Logarithmic Laws</span>
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Past Paper</a> |
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Marking Scheme</a>
+        </li>
+        <li>
+            <span>Solving Logarithmic Equations</span>
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Past Paper</a> |
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Marking Scheme</a>
+        </li>
+    </ul>
+
+    <!-- Trigonometry Section -->
+    <h2>Trigonometry</h2>
+    <ul>
+        <li>
+            <span>Sine, Cosine, and Tangent Ratios</span>
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Past Paper</a> |
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Marking Scheme</a>
+        </li>
+        <li>
+            <span>Graphs of Trigonometric Functions</span>
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Past Paper</a> |
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Marking Scheme</a>
+        </li>
+    </ul>
+
+    <!-- Matrices Section -->
+    <h2>Matrices</h2>
+    <ul>
+        <li>
+            <span>Matrix Addition and Subtraction</span>
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Past Paper</a> |
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Marking Scheme</a>
+        </li>
+        <li>
+            <span>Determinants of 2x2 and 3x3 Matrices</span>
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Past Paper</a> |
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Marking Scheme</a>
+        </li>
+    </ul>
+
+    <!-- Fractions (Primary) Section -->
+    <h2>Fractions (Primary)</h2>
+    <ul>
+        <li>
+            <span>Understanding Fractions</span>
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Past Paper</a> |
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Marking Scheme</a>
+        </li>
+        <li>
+            <span>Adding and Subtracting Fractions</span>
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Past Paper</a> |
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Marking Scheme</a>
+        </li>
+    </ul>
+
+    <!-- Perimeter and Area (Primary) Section -->
+    <h2>Perimeter and Area (Primary)</h2>
+    <ul>
+        <li>
+            <span>Perimeter of Rectangles and Squares</span>
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Past Paper</a> |
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Marking Scheme</a>
+        </li>
+        <li>
+            <span>Area of Rectangles and Triangles</span>
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Past Paper</a> |
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Marking Scheme</a>
+        </li>
+    </ul>
+
+    <!-- Volume (Primary) Section -->
+    <h2>Volume (Primary)</h2>
+    <ul>
+        <li>
+            <span>Volume of Cubes and Cuboids</span>
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Past Paper</a> |
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Marking Scheme</a>
+        </li>
+    </ul>
+
+</div>
+<div class="container">
+
+    <!-- Binomial Expansion Section -->
+    <h2>Binomial Expansion</h2>
+    <ul>
+        <li>
+            <span>Using Pascal's Triangle</span>
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Past Paper</a> |
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Marking Scheme</a>
+        </li>
+        <li>
+            <span>General Binomial Theorem</span>
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Past Paper</a> |
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Marking Scheme</a>
+        </li>
+    </ul>
+
+    <!-- Complex Numbers Section -->
+    <h2>Complex Numbers</h2>
+    <ul>
+        <li>
+            <span>Basic Operations with Complex Numbers</span>
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Past Paper</a> |
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Marking Scheme</a>
+        </li>
+        <li>
+            <span>Modulus and Argument</span>
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Past Paper</a> |
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Marking Scheme</a>
+        </li>
+    </ul>
+
+    <!-- Decimals (Primary) Section -->
+    <h2>Decimals (Primary)</h2>
+    <ul>
+        <li>
+            <span>Converting Fractions to Decimals</span>
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Past Paper</a> |
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Marking Scheme</a>
+        </li>
+        <li>
+            <span>Adding and Subtracting Decimals</span>
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Past Paper</a> |
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Marking Scheme</a>
+        </li>
+    </ul>
+
+    <!-- Money (Primary) Section -->
+    <h2>Money (Primary)</h2>
+    <ul>
+        <li>
+            <span>Solving Word Problems with Money</span>
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Past Paper</a> |
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Marking Scheme</a>
+        </li>
+    </ul>
+
+    <!-- Linear Programming Section -->
+    <h2>Linear Programming</h2>
+    <ul>
+        <li>
+            <span>Formulating Linear Programming Problems</span>
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Past Paper</a> |
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Marking Scheme</a>
+        </li>
+        <li>
+            <span>Graphical Solutions</span>
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Past Paper</a> |
+            <a href="https://www.testprepreview.com/modules/mathematics1.htm" target="_blank">Marking Scheme</a>
+        </li>
+    </ul>
+
+</div>
+
+</div>
+
+</body>
+</html>
