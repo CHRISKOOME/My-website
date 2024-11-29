@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Math Games</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: skyblue;
+            color: #4a235a;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .header {
+            background-color: red;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+
+        .section-title {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 2.5em;
+            color: #6c3483;
+        }
+
+        .game-section {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .game-card {
+            background-color: deepskyblue;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .game-card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .game-card button {
+            background-color: black;
+            border: none;
+            padding: 10px 20px;
+            color: white;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .game-card button:hover {
+            background-color: black;
+        }
+
+        .game-card p {
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+
+        footer {
+            background-color: red;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">Fun Math Games</div>
+
+    <div class="container">
+
+        <!-- Math Games Section -->
+        <section id="games">
+            <h2 class="section-title">PLAY MATH AND IQ MATH GAMES</h2>
+
+            <div class="game-section">
+
+                <!-- Game 1: Math Snake -->
+                <div class="game-card">
+                    <img src="/IMG_2248.png" width="10%" alt="Math Snake">
+                    <h4>Math Snake</h4>
+                    <p>Help the snake grow by solving quick math problems as it eats! Test your skills!</p>
+                    <button onclick="playMathSnake()">Play Math Snake</button>
+                </div>
+
+                <!-- Game 2: Math Maze -->
+                <div class="game-card">
+                    <img src="/IMG_2249.png" width="10%" alt="Math Maze">
+                    <h4>Math Maze</h4>
+                    <p>Navigate the maze by answering math questions. The more you answer correctly, the faster you escape!</p>
+                    <button onclick="playMathMaze()">Play Math Maze</button>
+                </div>
+
+                <!-- Game 3: Math Breakout -->
+                <div class="game-card">
+                    <img src="/IMG_2250.png" alt="Math Breakout">
+                    <h4>Math Breakout</h4>
+                    <p>Break the blocks by solving math problems. The faster you solve, the quicker you break them all!</p>
+                    <button onclick="playMathBreakout()">Play Math Breakout</button>
+                </div>
+            </div>
+
+            <div class="game-section">
+
+                <!-- Game 4: Transom Puzzle -->
+                <div class="game-card">
+                    <img src="/IMG_2251.png" alt="Transom Puzzle">
+                    <h4>Transom Puzzle</h4>
+                    <p>Arrange the numbers in the right order to solve the transom puzzle! Challenge your brain with this fun game!</p>
+                    <button onclick="playTransomPuzzle()">Play Transom Puzzle</button>
+                </div>
+
+                <!-- Game 5: Cool Math Puzzle -->
+                <div class="game-card">
+                    <img src="/IMG_2252.png" alt="Cool Math Puzzle">
+                    <h4>Cool Math Puzzle</h4>
+                    <p>Use logic and math skills to solve these cool puzzles. Make your brain work hard!</p>
+                    <button onclick="playCoolMathPuzzle()">Play Cool Math Puzzle</button>
+                </div>
+
+                <!-- Game 6: Math Playground Adventure -->
+                <div class="game-card">
+                    <img src="/IMG_2253.png" alt="Math Playground Adventure">
+                    <h4>Math Playground Adventure</h4>
+                    <p>Join an adventure where each step requires solving a new math problem! How far can you go?</p>
+                    <button onclick="playMathPlaygroundAdventure()">Play Math Playground Adventure</button>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+    <footer>
+        &copy; 2025 Fun Math Games. All Rights Reserved.
+    </footer>
+<div></div>
+    <!-- Game Functions -->
+    <script>
+        function playMathSnake() {
+            window.open("https://www.coolmathgames.com/0-snake", "_blank");
+        }
+
+        function playMathMaze() {
+            window.open("https://www.coolmathgames.com/0-maze", "_blank");
+        }
+
+        function playMathBreakout() {
+            window.open("https://www.coolmathgames.com/0-math-bricks", "_blank");
+        }
+
+        function playTransomPuzzle() {
+            window.open("https://example.com/transom-puzzle", "_blank");
+        }
+
+        function playCoolMathPuzzle() {
+            window.open("https://example.com/cool-math-puzzle", "_blank");
+        }
+
+        function playMathPlaygroundAdventure() {
+            window.open("https://www.mathplayground.com/", "_blank");
+        }
+    </script>
+
+</body>
+
+</html>
