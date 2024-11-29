@@ -1,0 +1,370 @@
+<h2>Math pass</h2>
+      <!-- Logo -->
+      <div class="d-flex justify-content-center mb-3">
+        <img src="/IMG_2583.jpeg" width="80px" height="80px" alt="Logo" class="logo">
+      </div>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Scientific Calculator</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        :root {
+            --primary-color: #e0e5ec;
+            --shadow-color: #a3b1c6;
+            --highlight-color: #ffffff;
+            --text-color: #2d3436;
+            --button-hover: #edf0f4;
+        }
+
+        .dark-mode {
+            --primary-color: #2d3436;
+            --shadow-color: #1a1f21;
+            --highlight-color: #3d4548;
+            --text-color: #ffffff;
+            --button-hover: #404749;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--primary-color);
+            padding: 20px;
+        }
+
+        .calculator {
+            width: 100%;
+            max-width: 400px;
+            background: var(--primary-color);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 
+                8px 8px 15px var(--shadow-color),
+                -8px -8px 15px var(--highlight-color);
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .display {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 20px;
+            padding: 20px;
+            font-size: 2em;
+            text-align: right;
+            color: var(--text-color);
+            background: var(--primary-color);
+            border-radius: 10px;
+            box-shadow: 
+                inset 5px 5px 10px var(--shadow-color),
+                inset -5px -5px 10px var(--highlight-color);
+            overflow: hidden;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+        }
+
+        button {
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background: var(--primary-color);
+            color: var(--text-color);
+            font-size: 1.2em;
+            cursor: pointer;
+            box-shadow: 
+                5px 5px 10px var(--shadow-color),
+                -5px -5px 10px var(--highlight-color);
+            transition: all 0.2s ease;
+        }
+
+        button:hover {
+            background: var(--button-hover);
+        }
+
+        button:active {
+            box-shadow: 
+                inset 5px 5px 10px var(--shadow-color),
+                inset -5px -5px 10px var(--highlight-color);
+        }
+
+        .operator {
+            color: #e17055;
+        }
+
+        .function {
+            color: #00b894;
+        }
+
+        .memory {
+            color: #0984e3;
+        }
+
+        .equals {
+            background: #6c5ce7;
+            color: white;
+        }
+
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: var(--text-color);
+            cursor: pointer;
+            box-shadow: 
+                5px 5px 10px var(--shadow-color),
+                -5px -5px 10px var(--highlight-color);
+        }
+
+        @media (max-width: 480px) {
+            .calculator {
+                padding: 15px;
+            }
+            
+            .buttons {
+                gap: 10px;
+            }
+            
+            button {
+                padding: 10px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="theme-toggle">
+        <i class="fas fa-moon"></i>
+    </div>
+    <div class="calculator">
+        <div class="display">0</div>
+        <div class="buttons">
+            <!-- Memory Functions -->
+            <button class="memory">MC</button>
+            <button class="memory">MR</button>
+            <button class="memory">M+</button>
+            <button class="memory">M-</button>
+            <button class="memory">MS</button>
+
+            <!-- Functions -->
+            <button class="function">sin</button>
+            <button class="function">cos</button>
+            <button class="function">tan</button>
+            <button class="function">log</button>
+            <button class="function">ln</button>
+
+            <!-- More Functions -->
+            <button class="function">x²</button>
+            <button class="function">x³</button>
+            <button class="function">√</button>
+            <button class="function">∛</button>
+            <button class="operator">mod</button>
+
+            <!-- Numbers and Basic Operators -->
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button class="operator">÷</button>
+            <button class="function">π</button>
+
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button class="operator">×</button>
+            <button class="function">e</button>
+
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button class="operator">-</button>
+            <button class="function">x!</button>
+
+            <button>0</button>
+            <button>.</button>
+            <button class="operator">±</button>
+            <button class="operator">+</button>
+            <button class="equals">=</button>
+        </div>
+    </div>
+
+    <script>
+        let display = document.querySelector('.display');
+        let buttons = document.querySelectorAll('button');
+        let memory = 0;
+        let currentValue = '0';
+        let previousValue = '';
+        let operation = null;
+        let shouldResetDisplay = false;
+
+        // Theme Toggle
+        const themeToggle = document.querySelector('.theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            themeToggle.querySelector('i').classList.toggle('fa-moon');
+            themeToggle.querySelector('i').classList.toggle('fa-sun');
+        });
+
+        // Calculator Functions
+        function updateDisplay() {
+            display.textContent = currentValue;
+        }
+
+        function calculate(a, b, operation) {
+            a = parseFloat(a);
+            b = parseFloat(b);
+            switch(operation) {
+                case '+': return a + b;
+                case '-': return a - b;
+                case '×': return a * b;
+                case '÷': return b !== 0 ? a / b : 'Error';
+                case 'mod': return a % b;
+                default: return b;
+            }
+        }
+
+        function factorial(n) {
+            if (n < 0) return 'Error';
+            if (n === 0) return 1;
+            let result = 1;
+            for(let i = 1; i <= n; i++) {
+                result *= i;
+            }
+            return result;
+        }
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Add click animation
+                button.style.transform = 'scale(0.95)';
+                setTimeout(() => button.style.transform = 'scale(1)', 100);
+
+                const value = button.textContent;
+
+                // Handle numbers
+                if (!isNaN(value) || value === '.') {
+                    if (shouldResetDisplay) {
+                        currentValue = value;
+                        shouldResetDisplay = false;
+                    } else {
+                        currentValue = currentValue === '0' && value !== '.' ? value : currentValue + value;
+                    }
+                    updateDisplay();
+                }
+
+                // Handle operators
+                if (['+', '-', '×', '÷', 'mod'].includes(value)) {
+                    previousValue = currentValue;
+                    operation = value;
+                    shouldResetDisplay = true;
+                }
+
+                // Handle equals
+                if (value === '=') {
+                    currentValue = calculate(previousValue, currentValue, operation).toString();
+                    operation = null;
+                    shouldResetDisplay = true;
+                    updateDisplay();
+                }
+
+                // Handle functions
+                switch(value) {
+                    case 'sin':
+                        currentValue = Math.sin(parseFloat(currentValue) * Math.PI / 180).toString();
+                        break;
+                    case 'cos':
+                        currentValue = Math.cos(parseFloat(currentValue) * Math.PI / 180).toString();
+                        break;
+                    case 'tan':
+                        currentValue = Math.tan(parseFloat(currentValue) * Math.PI / 180).toString();
+                        break;
+                    case 'log':
+                        currentValue = Math.log10(parseFloat(currentValue)).toString();
+                        break;
+                    case 'ln':
+                        currentValue = Math.log(parseFloat(currentValue)).toString();
+                        break;
+                    case 'x²':
+                        currentValue = Math.pow(parseFloat(currentValue), 2).toString();
+                        break;
+                    case 'x³':
+                        currentValue = Math.pow(parseFloat(currentValue), 3).toString();
+                        break;
+                    case '√':
+                        currentValue = Math.sqrt(parseFloat(currentValue)).toString();
+                        break;
+                    case '∛':
+                        currentValue = Math.cbrt(parseFloat(currentValue)).toString();
+                        break;
+                    case 'π':
+                        currentValue = Math.PI.toString();
+                        break;
+                    case 'e':
+                        currentValue = Math.E.toString();
+                        break;
+                    case 'x!':
+                        currentValue = factorial(parseInt(currentValue)).toString();
+                        break;
+                    case '±':
+                        currentValue = (parseFloat(currentValue) * -1).toString();
+                        break;
+                }
+
+                // Handle memory operations
+                switch(value) {
+                    case 'MC':
+                        memory = 0;
+                        break;
+                    case 'MR':
+                        currentValue = memory.toString();
+                        break;
+                    case 'M+':
+                        memory += parseFloat(currentValue);
+                        break;
+                    case 'M-':
+                        memory -= parseFloat(currentValue);
+                        break;
+                    case 'MS':
+                        memory = parseFloat(currentValue);
+                        break;
+                }
+
+                updateDisplay();
+            });
+        });
+    </script>
+  <!-- Link to Scientific Calculator -->
+  <div class="button-container">
+    <button class="link-button" onclick="window.location.href='geogebra.html'">Go to geogebra</button>
+  </div>
+
+</body>
+</html>
