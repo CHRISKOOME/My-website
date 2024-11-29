@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GeoGebra Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      background-color: darkgreen;
+      color: #333;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    #geogebra-calculator {
+      width: 80%;
+      height: 750px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .button-container {
+      margin-top: 20px;
+    }
+
+    .fullscreen-button, .link-button {
+      padding: 10px 20px;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .fullscreen-button {
+      background-color: #28a745;
+    }
+
+    .fullscreen-button:active {
+      background-color: #218838;
+    }
+
+    .link-button {
+      background-color: #007bff;
+      margin-top: 20px;
+    }
+
+    .link-button:active {
+      background-color: #0056b3;
+    }
+
+    /* Dark Mode Styles */
+    body.dark-mode {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+
+    body.dark-mode h1 {
+      color: #e0e0e0;
+    }
+
+    body.dark-mode #geogebra-calculator {
+      border: 1px solid #555;
+      box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1);
+    }
+
+    body.dark-mode .fullscreen-button {
+      background-color: #1e7e34;
+    }
+
+    body.dark-mode .fullscreen-button:active {
+      background-color: #155724;
+    }
+
+    body.dark-mode .link-button {
+      background-color: #0056b3;
+    }
+
+    body.dark-mode .link-button:active {
+      background-color: #004085;
+    }
+
+    /* Dark Mode Toggle Button Style */
+    .dark-mode-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: transparent;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: #333;
+      transition: color 0.3s;
+    }
+
+    /* Icon color for dark mode */
+    body.dark-mode .dark-mode-toggle {
+      color: #e0e0e0;
+    }
+  </style>
+</head>
+<body>
+  <button class="dark-mode-toggle" id="darkModeBtn" onclick="toggleDarkMode()">☀️</button>
+
+  <h1>GeoGebra Calculator</h1>
+  
+  <!-- GeoGebra Iframe -->
+  <iframe id="geogebra-calculator" src="https://www.geogebra.org/classic" title="GeoGebra Calculator"></iframe>
+
+  <!-- Fullscreen Button -->
+  <div class="button-container">
+    <button id="fullscreenBtn" class="fullscreen-button" onclick="toggleGeoGebraFullscreen()">Enter Fullscreen</button>
+  </div>
+
+  <!-- Link to Scientific Calculator -->
+  <div class="button-container">
+    <button class="link-button" onclick="window.location.href='scientific_calculator.html'">Go to Scientific Calculator</button>
+  </div>
+
+  <script>
+    // Toggle Fullscreen for the entire document
+    function toggleGeoGebraFullscreen() {
+      const fullscreenBtn = document.getElementById("fullscreenBtn");
+
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen()
+          .then(() => {
+            fullscreenBtn.textContent = "Exit Fullscreen";
+          })
+          .catch((err) => {
+            console.error(`Error attempting to enable fullscreen mode: ${err.message}`);
+          });
+      } else {
+        document.exitFullscreen()
+          .then(() => {
+            fullscreenBtn.textContent = "Enter Fullscreen";
+          })
+          .catch((err) => {
+            console.error(`Error attempting to disable fullscreen mode: ${err.message}`);
+          });
+      }
+    }
+
+    // Toggle Dark Mode
+    function toggleDarkMode() {
+      const body = document.body;
+      const darkModeBtn = document.getElementById("darkModeBtn");
+
+      body.classList.toggle("dark-mode");
+
+      // Change icon based on the mode
+      if (body.classList.contains("dark-mode")) {
+        darkModeBtn.textContent = "🌘";
+      } else {
+        darkModeBtn.textContent = "☀️";
+      }
+    }
+  </script>
+</body>
+</html>
