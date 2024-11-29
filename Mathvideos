@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Video Tutorials</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        h1, h2 {
+            color: #343a40;
+        }
+        .card {
+            margin: 20px 0;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="text-center mt-5">Math Video Tutorials</h1>
+
+        <!-- Algebra Section -->
+        <h2 class="mt-4">Algebra</h2>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Linear Equations</h5>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/https://youtu.be/Ft2_QtXAnh8?si=7X5tA4GbewI7Eceb" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p class="card-text">Learn about linear equations and how to solve them.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Quadratic Equations</h5>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/5lVxcx4ajks?si=omtCVXSgFpVvkFbf" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p class="card-text">Understanding quadratic equations and their solutions.</p>
+            </div>
+        </div>
+
+        <!-- Geometry Section -->
+        <h2 class="mt-4">Geometry</h2>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Triangles</h5>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/jWHOF6cFbpw?si=HnRo_BiiDz0b4tzm" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p class="card-text">Learn about the properties of triangles.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Circles</h5>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/u_39J-syjB0?si=-H883VlD2l1ey22M" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p class="card-text">Explore the properties of circles and their equations.</p>
+            </div>
+        </div>
+
+        <!-- Calculus Section -->
+        <h2 class="mt-4">Calculus</h2>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Derivatives</h5>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p class="card-text">An introduction to derivatives and their applications.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Integrals</h5>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p class="card-text">Understanding integrals and their significance in calculus.</p>
+            </div>
+        </div>
+
+        <!-- Statistics Section -->
+        <h2 class="mt-4">Statistics</h2>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Descriptive Statistics</h5>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p class="card-text">Learn about mean, median, mode, and range.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Probability</h5>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p class="card-text">Understanding the basics of probability and its applications.</p>
+            </div>
+        </div>
+
+        <!-- Additional topics can be added here -->
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Video Tutorials</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        h1, h2 {
+            color: #343a40;
+        }
+        .card {
+            margin: 20px 0;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .feedback-section {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+        }
+        .feedback-section h3 {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="text-center mt-5">Math Video Tutorials</h1>
+
+        <!-- Algebra Section -->
+        <h2 class="mt-4">Algebra</h2>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Linear Equations</h5>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/Fs5Fwlk7-Sc?si=x7j_ba9fMn3KARjh" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p class="card-text">Learn how to solve linear equations step-by-step.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Quadratic Equations</h5>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p class="card-text">Understanding the methods to solve quadratic equations.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Polynomials</h5>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p class="card-text">Learn how to add, subtract, and multiply polynomials.</p>
+            </div>
+        </div>
+
+        <!-- Geometry Section -->
+        <h2 class="mt-4">Geometry</h2>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Triangles</h5>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p class="card-text">Explore different types of triangles and their properties.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Circles</h5>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p class="card-text">Learn about the equations and properties of circles.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Area and Volume</h5>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p class="card-text">Calculate area and volume for various shapes.</p>
+            </div>
+        </div>
+
+        <!-- Calculus Section -->
+        <h2 class="mt-4">Calculus</h2>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Derivatives</h5>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p class="card-text">An introduction to the concept of derivatives.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Integrals</h5>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p class="card-text">Understanding the basics of integration.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Limits</h5>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p class="card-text">Learn how to evaluate limits in calculus.</p>
+            </div>
+        </div>
+
+        <!-- Statistics Section -->
+        <h2 class="mt-4">Statistics</h2>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Descriptive Statistics</h5>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p class="card-text">Introduction to mean, median, mode, and standard deviation.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Probability</h5>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p class="card-text">Understanding probability concepts and calculations.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Inferential Statistics</h5>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/euw-CFjQnDQ?si=_mXJFKEX4Ff-xBkq" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p class="card-text">Learn about hypothesis testing and confidence intervals.</p>
+            </div>
+        </div>
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
+<a href="/math.html">MORE📲📲</a>
