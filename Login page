@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+
+  <!-- Custom CSS -->
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: skyblue;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-container {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      width: 150%;
+      max-width: 1000px;
+    }
+
+    .logo {
+      border-radius: 50%;
+      width: 160px;
+      height: 200px;
+    }
+
+    .left-align-label {
+      text-align: left !important;
+    }
+
+    .btn-custom {
+      background-color: red;
+      color: #fff;
+      border: 1px solid #ffffff;
+      padding: 10px 50px;
+      transition: background-color 0.3s, color 0.3s, border 0.3s;
+    }
+
+    .btn-custom:hover {
+      background-color: red;
+      color: #dc3545;
+      border: 1px solid #dc3545;
+    }
+
+    .form-control {
+      border: 1px solid #000000;
+    }
+
+    .form-control:hover {
+      border: 1px solid #dc3545;
+    }
+
+    .form-control:focus {
+      border: 1px solid #dc3545;
+      box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+    }
+
+    .error-message {
+      color: red;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+
+<body>
+  <form id="form" action="template.html" method="GET">
+    <!-- Login Container -->
+    <div class="login-container">
+      <!-- Header with Navbar -->
+      <header>
+        <nav class="navbar navbar-expand-lg navbar-danger bg-danger">
+          <a class="navbar-brand text-light">Login</a>
+        </nav>
+      </header>
+
+      <!-- Logo -->
+      <div class="d-flex justify-content-center mb-3">
+        <img src="/IMG_2583.jpeg" width:'100px'alt="Logo" class="logo">
+      </div>
+
+      <!-- Title -->
+      <div class="d-flex justify-content-center">
+        <h1 class="font-weight-bold">Login</h1>
+      </div>
+
+      <!-- Login Form -->
+      <form id="loginForm" onsubmit="return validateForm()">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label for="username" class="left-align-label font-weight-bold">Email</label>
+              <input type="email" class="form-control" id="username" name="username" placeholder="Enter your email" required>
+              <div class="error-message" id="emailError"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label for="password" class="left-align-label font-weight-bold">Password</label>
+              <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+              <div class="error-message" id="passwordError"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="d-flex justify-content-center">
+          <button type="submit" class="btn btn-custom">Login</button>
+        </div>
+      </form>
+
+      <!-- Registration Link -->
+      <div class="d-flex justify-content-center mt-3">
+        <p class="font-weight-normal"><a href="registration.html">Register here</a></p>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS and Dependencies -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-73L/B5Nb5cdWU7qzyts3+1F6sV+0g9iC8fwW8Wg/Ee8tl1IaEo/EE7woCpHxyJs" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6mgg9uUPOB4N0LZz5KR6QaAC2bJ86U7EsxPDi" crossorigin="anonymous"></script>
+
+    <!-- Form Validation Script -->
+    <script>
+      function validateForm() {
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        var emailError = document.getElementById('emailError');
+        var passwordError = document.getElementById('passwordError');
+
+        // Clear previous error messages
+        emailError.textContent = '';
+        passwordError.textContent = '';
+
+        // Email validation
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(username)) {
+          emailError.textContent = 'Please enter a valid email address';
+          return false;
+        }
+
+        // Password validation
+        var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+        if (!passwordRegex.test(password)) {
+          passwordError.textContent = 'Password must contain at least 6 characters, including an uppercase letter, a lowercase letter, a number, and a special character';
+          return false;
+        }
+
+        // If validation passes,and the user enter there information redirect to template.html
+        window.location.href = "template.html"; // Redirect to template page
+        return true; // Prevent form submission if using a real form submission method
+      }
+    </script>
+</body>
+
+</html>
