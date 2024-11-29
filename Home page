@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+
+    <title>Home</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .btn-custom {
+            background-color: darkred;
+            color: #fff;
+            border: 1px solid #ffffff;
+            padding: 10px 20px;
+            margin-top: 20px;
+        }
+
+        .btn-custom:hover {
+            background-color: indianred;
+            border: 1px solid #dc3545;
+            color: #dc3545;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: green;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            color: white;
+        }
+
+        .sidenav h1 {
+            font-size: 24px;
+            padding: 10px 32px;
+            margin-bottom: 0;
+        }
+
+        .sidenav h2 {
+            font-size: 18px;
+            padding: 10px 32px;
+            margin-top: 0;
+        }
+
+        .sidenav a {
+            padding: 8px 32px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #ffffff;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidenav .separator {
+            border-bottom: 1px solid white;
+            margin: 10px 0;
+        }
+
+        .sidenav a:hover {
+            background-color: skyblue;
+            color: #dc3545;
+        }
+
+        #main {
+            transition: margin-left .5s;
+            padding: 16px;
+        }
+
+        .footer {
+            background-color: deepskyblue;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <script>
+        function toggleNav() {
+            var sidenav = document.getElementById("mySidenav");
+            var main = document.getElementById("main");
+            if (sidenav.style.width === "250px") {
+                sidenav.style.width = "0";
+                main.style.marginLeft = "0";
+            } else {
+                sidenav.style.width = "250px";
+                main.style.marginLeft = "250px";
+            }
+        }
+    </script>
+</head>
+
+<body>
+  
+    <!-- Side menu -->
+    <div id="mySidenav" class="sidenav">
+        <h1>MATHPASS</h1>
+        <p>welcome all to math pass website</p>
+        <div class="separator"></div>
+        <a href="#"><span>&#x1F3E0;</span><a href="/home.html">Home</a> <!-- House icon -->
+        
+    <div class="separator"></div>
+         <a href="#"><span>🎥</span><a href="/mathvideos.html"> Math videos</a> <!-- House icon -->
+       <div class="separator"></div>
+       <a href="#"><span>&#x1F4C3;</span><a href="/Past papers.html">Past paper</a> <!-- House icon -->
+       <div class="separator"></div>
+        <a href="#"><span>🎮</span><a href="/games.html"> Games</a> <!-- Open book icon -->
+        <div class="separator"></div>
+        <a href="#"><span>🗯️</span><a href="/help.html">Help</a> <!-- Envelope icon -->
+        <div class="separator"></div>
+        <a href="#"><span>☎️</span><a href="/contact.html">contact</a> <!-- Page icon -->
+                <!-- Robot emoji as icon -->
+        <div class="separator"></div> 
+        <a href="#"><span class="💬">💬</span><a href="/chat bot.html"> Math bot</a>
+        
+        <div class="separator"></div>
+         <!-- House icon -->
+ <a href="#"><span>🧮</span><a href="/geogebra.html">Calculator</a>
+         <div class="separator"></div>
+        <a href="/registration.html"><span>&#x1F464;</span>Logout</a> <!-- Bust in silhouette icon -->
+        <!-- Robot emoji as icon -->
+        <div class="separator"></div> 
+        <a href="#"><span class="💬"></span><a href=""> </a>
+    </div>
+
+    <!-- Main content -->
+    <div id="main">
+        <!-- Navbar -->
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-danger bg-danger">
+                <span style="font-size:30px;cursor:pointer; color: #fff;" onclick="toggleNav()">☰</span>
+                <a class="navbar-brand text-light text-center mx-auto" href="#">The Web Creator</a>
+            </nav>
+        </header>
+        <p><h2>welcome to my page; all the services are on the side menu. Enjoy the website</h2></p>
+        <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Chris Harrison Koome</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: peru;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: skyblue;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #4b0082;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        p {
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .profile-pic {
+            display: block;
+            margin: 0 auto;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .skills, .aspirations {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .skills div, .aspirations div {
+            flex: 0 1 45%;
+            margin-bottom: 20px;
+        }
+
+        .skills-list, .aspirations-list {
+            padding-left: 20px;
+        }
+
+        .skills-list li, .aspirations-list li {
+            margin-bottom: 10px;
+            list-style-type: circle;
+        }
+
+        footer {
+            background-color: limegreen;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .social-links {
+            margin-top: 10px;
+        }
+
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        @media (max-width: 768px) {
+            .skills div, .aspirations div {
+                flex: 0 1 100%;
+            }
+        /*Animation*/
+        @keyframes float {
+            0% { transform:translateY(0px); }
+            50% { transform:translateY(-20px); }
+            100% { transform:translateY(0px); }
+   
+        }
+      
+      .floating {
+            animation: float 6s ease-in-out infinite;
+      }
+    </style>
+    </head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>About Me - Chris Harrison Koome</h1>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <section>
+            <!-- Profile Picture -->
+            <img src="/A29AAC81-27EE-4CE9-80B1-F1C4762B58BC.jpeg" width="400px"; height="350px"; alt="Logo" class="logo">
+
+            <h2>Who Am I?</h2>
+            <p>Hello, my name is Chris Harrison Koome. I am a student currently pursuing my education at Mpesa Foundation Academy in Kenya. I have a deep passion for technology, coding, and swimming. I believe in pushing my limits and challenging myself in everything I do, whether it’s excelling in the classroom, breaking records in swimming, or exploring new technological innovations.</p>
+        </section>
+
+        <section>
+            <h2>Personal Background</h2>
+            <p>I have always been fascinated by the world of technology, which led me to develop my skills in coding. I also love biology, and I’m exploring how to merge my interests in technology and science to create solutions for the future. Apart from academics, I am a competitive swimmer, having won several medals in competitions, and I strive to be the best in all aspects of my life.</p>
+        </section>
+        
+        <section>
+            <h2>Current Location</h2>
+            <p>I am currently based in Kenya( THAKAKA NITHI COUNTY; MITHERU WARD;ODD MITHERU)a beautiful country that inspires my work and vision. Being in an environment with such a rich culture and diverse community allows me to learn and grow each day.</p>
+        </section>
+        
+        <section class="skills">
+            <div>
+                <h2>My Skills</h2>
+                <ul class="skills-list">
+                    <li>Advanced Coding (Python, HTML, CSS,C++, JavaScript)</li>
+                    <li>Proficient Swimmer (multiple medalist)</li>
+                    <li>Technological Innovation</li>
+                    <li>Biology Enthusiast</li>
+                    <li>Future cardiologist, forensic scientist, software engineer</li>
+                </ul>
+            </div>
+            <div>
+                <img src="/IMG_2321.jpeg" alt="Coding Image" style="max-width: 100%; border-radius: 8px;">
+            </div>
+        </section>
+        <section class="aspirations">
+            <div>
+                <h2>My Aspirations</h2>
+                <ul class="aspirations-list">
+                    <li>To become the best in the world in technology and innovation.</li>
+                    <li>To make significant contributions to biology through technology.</li>
+                    <li>To inspire young people in Kenya and beyond to dream big.</li>
+                    <li>To serve my country as the President of Kenya one day.</li>
+                    <li>To encourage and be a role model student who we share with the same home background (A poor background) </li>
+                    <li>To encourage the young generation to be involved in technological activities</li>
+                </ul>
+            </div>
+            <div>
+                <img src="/E8BB5775-7D41-4512-89CA-73B7536E2AA4.jpeg" alt="Inspiration Image" style="max-width: 100%; border-radius: 8px;">
+            </div>
+        </section>
+        
+        
+        <section class="skills">
+            <div>
+                <h2>My Birthday</h2>
+                <ul class="skills-list">
+                    <li>Born in the 8/11/2024 in Nairobi Pipeline(Mkuru kwa Njenga)</li>
+                    <li> My Parents are Grace Gacheri And Urbanus Murithi</li>
+                    <li> Born at St Mary Hospital Nairobi</li>
+                    <li>Brother of three and no sister😓</li>
+                </ul>
+            </div>
+                <img src="/Black & Yellow Simple Happy Birthday Card.png" width="350px" height="300px" alt="Coding Image" style="max-width: 100%; border-radius: 8px;">
+        </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Chris Harrison Koome. All Rights Reserved.</p>
+        <div class="social-links">
+            <a href="https://chris.koome@mpesafoundationacademy.ac.ke" target="_blank"><button>school</button></a>
+            <a href="http://linkedin.com/in/chris-vandik-koome-1a2020311" target="_blank"><button>Linkedin</button></a>
+            <a href="https://m.facebook.com/jobmwenda.murithi/" target="_blank"><button>facebook</button></a>
+            <a href="https://www.swimcloud.com/swimmer/2936181"><button>swimcloud</button></a>
+        </div>
+    </footer>
+<script type="text/javascript">
+  
+      v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+  })(document, 'script');
+</script>
+</body>
+
+</html>
+
+
+        <!-- Content goes here -->
+        <div class="container">
+      <script type="text/javascript">
+  (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      
