@@ -1,0 +1,37 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get form data
+    $name = htmlspecialchars(trim($_POST['name']));
+    $email = htmlspecialchars(trim($_POST['email']));
+    $comments = htmlspecialchars(trim($_POST['comments']));
+
+    // Validate form data
+    if (!empty($name) && !empty($email) && !empty($comments) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        // Set the recipient email address
+        $to = 'chris.koome@mpesafoundationacademy.ac.ke';
+        // Set the email subject
+        $subject = '/math.html';
+        
+        // Create the email content
+        $message = "Name: $name\n";
+        $message .= "Email: $email\n\n";
+        $message .= "Comments:\n$comments\n";
+        
+        // Set the email headers
+        $headers = "From: $email" . "\r\n" .
+                   "Reply-To: $email" . "\r\n" .
+                   "X-Mailer: PHP/" . phpversion();
+        
+        // Send the email
+        if (mail($to, $subject, $message, $headers)) {
+            echo 'Feedback sent successfully!';
+        } else {
+            echo 'Failed to send feedback. Please try again later.';
+        }
+    } else {
+        echo 'Please fill in all fields with valid data.';
+    }
+} else {
+    echo 'Invalid request method.';
+}
+?>
